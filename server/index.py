@@ -146,6 +146,7 @@ def signup(payload: SignupIn, db: Session = Depends(get_db)):
     existing = db.query(User).filter(User.email == payload.email).first()
     if existing:
         raise HTTPException(status_code=400, detail="Email already registered")
+    safe_password = payload.password[:72]
 
     user = User(email=payload.email, password_hash=_hash_password(payload.password))
     db.add(user)
