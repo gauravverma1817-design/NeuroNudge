@@ -12,7 +12,12 @@
   Neuro<span style="color:#5f9484; font-style:italic; font-weight:500;">Nudge</span>
 </a>
     <div class="links">
-      <span class="muted" id="user-email">…</span>
+      <style>
+  @media (max-width: 480px) {
+    #user-email { max-width: 110px !important; }
+  }
+</style>
+<span class="muted" id="user-email" style="display:inline-block; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; vertical-align:bottom;">…</span>
       <a href="#" id="logout-btn">Log out</a>
     </div>
   </nav>
