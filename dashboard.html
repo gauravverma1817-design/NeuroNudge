@@ -50,18 +50,40 @@
     </div>
 
     <!-- History -->
-    <section class="card" style="margin-top:20px;">
-      <h2>Recent entries</h2>
-      <p class="sub">Your last 30 logs.</p>
-      <table>
-        <thead>
-          <tr><th>When</th><th>Sleep</th><th>Stress</th><th>Screen</th><th>Activity</th></tr>
-        </thead>
-        <tbody id="log-history">
-          <tr><td colspan="5" class="muted center">Loading…</td></tr>
-        </tbody>
-      </table>
-    </section>
+    <section style="margin-top:20px; background:#ffffff; border:1px solid #e2e8e5; border-radius:14px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+  <h2 style="margin:0 0 6px; font-size:20px; color:#1a1a1a;">Recent entries</h2>
+  <p style="margin:0 0 20px; color:#6b7a74; font-size:14px;">Your last 30 logs.</p>
+
+  <div style="width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:12px;">
+    <table style="width:100%; min-width:460px; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="padding:10px 12px; text-align:left; font-size:12px; color:#6b7a74; font-weight:600; text-transform:uppercase; border-bottom:1px solid #e2e8e5; white-space:nowrap;">When</th>
+          <th style="padding:10px 12px; text-align:left; font-size:12px; color:#6b7a74; font-weight:600; text-transform:uppercase; border-bottom:1px solid #e2e8e5; white-space:nowrap;">Sleep</th>
+          <th style="padding:10px 12px; text-align:left; font-size:12px; color:#6b7a74; font-weight:600; text-transform:uppercase; border-bottom:1px solid #e2e8e5; white-space:nowrap;">Stress</th>
+          <th style="padding:10px 12px; text-align:left; font-size:12px; color:#6b7a74; font-weight:600; text-transform:uppercase; border-bottom:1px solid #e2e8e5; white-space:nowrap;">Screen</th>
+          <th style="padding:10px 12px; text-align:left; font-size:12px; color:#6b7a74; font-weight:600; text-transform:uppercase; border-bottom:1px solid #e2e8e5; white-space:nowrap;">Activity</th>
+        </tr>
+      </thead>
+      <tbody id="log-history">
+        <tr>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">24/07/2026, 21:01:26</td>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">10 h</td>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">5/10</td>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">2 h</td>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">120 min</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">24/07/2026, 21:00:23</td>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">6 h</td>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">8/10</td>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">8 h</td>
+          <td style="padding:10px 12px; font-size:14px; border-bottom:1px solid #e2e8e5; white-space:nowrap;">30 min</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
   </main>
 
   <script src="/app.js"></script>
