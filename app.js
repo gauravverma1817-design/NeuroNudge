@@ -4,7 +4,7 @@
    Stores the JWT in localStorage under 'nn_token'.
    -------------------------------------------------------------------------- */
 
-const API = "https://neuronudge-1.onrender.com"; // same origin — /api/* routes to the serverless function
+const API = "https://neuronudge-qpok.onrender.com"; // same origin — /api/* routes to the serverless function
 
 // ---------- Token helpers ----------
 const getToken   = () => localStorage.getItem("nn_token");
