@@ -19,8 +19,8 @@ from sqlalchemy.orm import Session
 from passlib.context import CryptContext
 from jose import jwt, JWTError
 
-from api.database import get_db, init_db, User, WellnessLog
-from api.predictive_model import predict as ml_predict
+from server.database import get_db, init_db, User, WellnessLog
+from server.predictive_model import predict as ml_predict
 
 # ---------------------------------------------------------------------------
 # App + config
