@@ -169,8 +169,11 @@ function renderPrediction(pred) {
 }
 
 // ---------- Boot ----------
+// ---------- Boot ----------
 document.addEventListener("DOMContentLoaded", () => {
   initSignup();
   initLogin();
-  initDashboard();
+  if (window.location.pathname.includes("/dashboard")) {
+    initDashboard();
+  }
 });
