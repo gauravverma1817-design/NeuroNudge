@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up — NeuroNudge</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="/">Neuro<span>Nudge</span></a>
+    <div class="links"><a href="/login">Log in</a></div>
+  </nav>
+
+  <div class="narrow card">
+    <h2>Create your account</h2>
+    <p class="sub">A calmer routine starts with one entry.</p>
+    <form id="signup-form" autocomplete="on">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required autocomplete="email" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" minlength="6" required autocomplete="new-password" />
+      <button type="submit" class="btn full">Create account</button>
+    </form>
+    <p class="muted center" style="margin-top:20px;">
+      Already have one? <a href="/login">Log in</a>
+    </p>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

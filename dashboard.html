@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — NeuroNudge</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="/dashboard">Neuro<span>Nudge</span></a>
+    <div class="links">
+      <span class="muted" id="user-email">…</span>
+      <a href="#" id="logout-btn">Log out</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="grid">
+
+      <!-- Log form -->
+      <section class="card">
+        <h2>Log today's wellness</h2>
+        <p class="sub">Takes about 30 seconds.</p>
+        <form id="log-form">
+          <label for="sleep_hours">Hours of sleep last night</label>
+          <input id="sleep_hours" name="sleep_hours" type="number" step="0.1" min="0" max="24" required />
+
+          <label for="stress_level">Stress level (1 = calm, 10 = overwhelmed)</label>
+          <input id="stress_level" name="stress_level" type="number" min="1" max="10" required />
+
+          <label for="screen_time_hours">Screen time today (hours)</label>
+          <input id="screen_time_hours" name="screen_time_hours" type="number" step="0.1" min="0" max="24" required />
+
+          <label for="activity_minutes">Physical activity today (minutes)</label>
+          <input id="activity_minutes" name="activity_minutes" type="number" min="0" max="500" required />
+
+          <button type="submit" class="btn full">Save &amp; get prediction</button>
+        </form>
+      </section>
+
+      <!-- Prediction -->
+      <section class="card">
+        <h2>Your 48-hour forecast</h2>
+        <p class="sub">Powered by a Decision Tree Classifier trained on wellness patterns.</p>
+        <div id="prediction-box">
+          <p class="muted">Log an entry to see your personalised prediction and nudges.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- History -->
+    <section class="card" style="margin-top:20px;">
+      <h2>Recent entries</h2>
+      <p class="sub">Your last 30 logs.</p>
+      <table>
+        <thead>
+          <tr><th>When</th><th>Sleep</th><th>Stress</th><th>Screen</th><th>Activity</th></tr>
+        </thead>
+        <tbody id="log-history">
+          <tr><td colspan="5" class="muted center">Loading…</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

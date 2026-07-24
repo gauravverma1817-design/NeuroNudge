@@ -1,0 +1,165 @@
+/* --------------------------------------------------------------------------
+   NeuroNudge design system
+   Calming palette: soft sage, muted sky-blue, warm off-white.
+   No pure black/white, no harsh gradients — designed to be easy on the eyes.
+   -------------------------------------------------------------------------- */
+:root {
+  --bg:            #f5f7f3;
+  --surface:       #ffffff;
+  --surface-alt:   #eef2ec;
+  --border:        #dbe3d9;
+  --text:          #2f3a33;
+  --text-muted:    #6b7b6f;
+  --primary:       #6ba292;   /* sage green */
+  --primary-dark:  #4e8577;
+  --accent:        #8fb8d1;   /* muted sky */
+  --warning:       #d9a566;
+  --danger:        #c97b7b;
+  --radius:        14px;
+  --shadow:        0 4px 20px rgba(60, 80, 65, 0.06);
+  --font:          -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--primary-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Layout ---------- */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.nav .brand {
+  font-weight: 700; font-size: 20px; letter-spacing: -0.01em;
+  color: var(--primary-dark);
+}
+.nav .brand span { color: var(--accent); }
+.nav .links a { margin-left: 20px; font-weight: 500; color: var(--text); }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 32px; }
+.narrow    { max-width: 440px; margin: 60px auto; padding: 32px; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+.card + .card { margin-top: 20px; }
+.card h2 { margin: 0 0 6px; font-size: 20px; }
+.card p.sub { margin: 0 0 20px; color: var(--text-muted); font-size: 14px; }
+
+/* ---------- Hero (landing) ---------- */
+.hero {
+  padding: 90px 32px 60px;
+  text-align: center;
+  background: linear-gradient(180deg, #eef4ef 0%, var(--bg) 100%);
+}
+.hero h1 {
+  font-size: 44px; margin: 0 0 16px; letter-spacing: -0.02em;
+  color: var(--primary-dark);
+}
+.hero p { font-size: 18px; color: var(--text-muted); max-width: 620px; margin: 0 auto 28px; }
+.hero .cta { display: inline-flex; gap: 12px; }
+
+.features {
+  display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding: 40px 32px;
+}
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.feature h3 { margin: 0 0 8px; color: var(--primary-dark); }
+.feature p  { margin: 0; color: var(--text-muted); font-size: 14px; }
+
+/* ---------- Forms ---------- */
+label {
+  display: block; font-size: 13px; font-weight: 600;
+  color: var(--text-muted); margin: 14px 0 6px;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+input, select {
+  width: 100%; padding: 12px 14px;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--surface-alt); color: var(--text);
+  font-size: 15px; font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+.btn {
+  display: inline-block; padding: 12px 22px;
+  border: none; border-radius: 10px;
+  background: var(--primary); color: #fff;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+.btn:hover  { background: var(--primary-dark); }
+.btn:active { transform: translateY(1px); }
+.btn.ghost  { background: transparent; color: var(--primary-dark); border: 1px solid var(--border); }
+.btn.full   { width: 100%; margin-top: 20px; }
+
+/* ---------- Dashboard grid ---------- */
+.grid {
+  display: grid; gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+
+/* ---------- Nudges ---------- */
+.risk-pill {
+  display: inline-block; padding: 4px 12px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.risk-low      { background: #dcece2; color: #386b56; }
+.risk-moderate { background: #f4e6cf; color: #8a6021; }
+.risk-high     { background: #f2d6d6; color: #8f3b3b; }
+
+.nudge-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.nudge-list li {
+  padding: 12px 14px; margin-bottom: 8px;
+  background: var(--surface-alt);
+  border-left: 3px solid var(--primary);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* ---------- Log history table ---------- */
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th, td { padding: 10px 12px; text-align: left; font-size: 14px; border-bottom: 1px solid var(--border); }
+th { color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed; bottom: 24px; right: 24px;
+  padding: 12px 18px; border-radius: 10px;
+  background: var(--primary-dark); color: #fff;
+  box-shadow: var(--shadow);
+  opacity: 0; transform: translateY(10px);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+.toast.error { background: var(--danger); }
+
+.muted { color: var(--text-muted); font-size: 14px; }
+.center { text-align: center; }
