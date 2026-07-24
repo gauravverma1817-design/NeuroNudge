@@ -59,7 +59,7 @@ function initSignup() {
     const email    = form.email.value.trim();
     const password = form.password.value;
     try {
-      const data = await api("/signup", {
+      const data = await api("/api/signup", {
         method: "POST", auth: false, body: { email, password },
       });
       setToken(data.access_token);
@@ -78,7 +78,7 @@ function initLogin() {
     const email    = form.email.value.trim();
     const password = form.password.value;
     try {
-      const data = await api("/login", {
+      const data = await api("/api/login", {
         method: "POST", auth: false, body: { email, password },
       });
       setToken(data.access_token);
@@ -109,9 +109,9 @@ function initDashboard() {
     };
     try {
       // 1. Persist the entry
-      await api("/logs", { method: "POST", body: payload });
+      await api("/api/logs", { method: "POST", body: payload });
       // 2. Get an ML prediction + nudges for this entry
-      const pred = await api("/predict", { method: "POST", body: payload });
+      const pred = await api("/api/predict", { method: "POST", body: payload });
       renderPrediction(pred);
       // 3. Refresh log history
       await loadLogs();
@@ -126,7 +126,7 @@ function initDashboard() {
 
 async function loadUser() {
   try {
-    const me = await api("/me");
+    const me = await api("/api/me");
     const el = document.getElementById("user-email");
     if (el) el.textContent = me.email;
   } catch { clearToken(); window.location.href = "/login"; }
@@ -136,7 +136,7 @@ async function loadLogs() {
   const tbody = document.getElementById("log-history");
   if (!tbody) return;
   try {
-    const logs = await api("/logs");
+    const logs = await api("/api/logs");
     if (!logs.length) {
       tbody.innerHTML = `<tr><td colspan="5" class="muted center">No entries yet — add your first log above.</td></tr>`;
       return;
