@@ -145,8 +145,13 @@ input:focus, select:focus {
 
 /* ---------- Log history table ---------- */
 table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-th, td { padding: 10px 12px; text-align: left; font-size: 14px; border-bottom: 1px solid var(--border); }
+th, td { padding: 10px 12px; text-align: left; font-size: 14px; border-bottom: 1px solid var(--border); white-space: nowrap; }
 th { color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+
+@media (max-width: 480px) {
+  table { min-width: 460px; }
+  th, td { padding: 8px 10px; font-size: 13px; }
+}
 
 /* ---------- Toast ---------- */
 .toast {
